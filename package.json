@@ -1,0 +1,21 @@
+{
+  "name": "songlist",
+  "version": "1.2.0",
+  "png_filename": "504.png",
+  "font_style": "simhei",
+  "font_en_style": "times",
+  "title": "刘老大_快乐鸭 FM 3062592",
+  "title_size": 70,
+  "font_size": 40,
+  "file_name": "songs.csv",
+  "font_color_1": 255,
+  "font_color_2": 255,
+  "font_color_3": 255,
+  "1_num": 8,
+  "2_num": 7,
+  "3_num": 6,
+  "4_num": 4,
+  "5_num": 4,
+  "10_num": 2,
+  "999_num": 2
+}
