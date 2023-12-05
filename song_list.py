@@ -121,7 +121,8 @@ class SongList:
         df['row_num'] = df.groupby('length_new')['num1'].transform('cumsum')
         # df['row_num1'] = math.ceil(df['row_num']/df['each_row'])
         df['row_num1'] = df[['row_num', 'each_row']].apply(lambda x: math.ceil(x['row_num'] / x['each_row']), axis=1)
-        data = json.loads(df.to_json(orient="records", force_ascii=False))
+        # data = json.loads(df.to_json(orient="records", force_ascii=False))
+        data = df.to_dict(orient="records")
         return data
 
     @staticmethod
@@ -164,23 +165,38 @@ class SongList:
         data = json.loads(df.to_json(orient="records", force_ascii=False))
         return data
 
+    # def each_row(self, num):
+    #     if num == 1:
+    #         return self.num1
+    #     elif num == 2:
+    #         return self.num2
+    #     elif num == 3:
+    #         return self.num3
+    #     elif num == 4:
+    #         return self.num4
+    #     elif num == 5:
+    #         return self.num5
+    #     elif num == 999:
+    #         return self.num999
+    #     elif 8 <= num < 12:
+    #         return self.num10
+    #     else:
+    #         return 3
+
     def each_row(self, num):
-        if num == 1:
-            return self.num1
-        elif num == 2:
-            return self.num2
-        elif num == 3:
-            return self.num3
-        elif num == 4:
-            return self.num4
-        elif num == 5:
-            return self.num5
-        elif num == 999:
-            return self.num999
-        elif 8 <= num < 12:
+        num_mapping = {
+            1: self.num1,
+            2: self.num2,
+            3: self.num3,
+            4: self.num4,
+            5: self.num5,
+            999: self.num999,
+        }
+
+        if 8 <= num < 12:
             return self.num10
         else:
-            return 3
+            return num_mapping.get(num, 3)
 
     def run(self):
         self.cut_image()
