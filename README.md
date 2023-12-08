@@ -13,7 +13,7 @@
    运行 `SongList` 类的 `run` 方法来执行工具。运行后，将生成一张包含歌单信息的图片，并保存在 `./result/song_list.jpg` 中。
 
 3. **安装依赖**
-   pip install -r requirements.txt
+   pip install -r requirements.txt   ps: 这里有很多包实际上用不到
 4. **脚本执行方法**
    python song_list.py 或 使用 pyinstaller 打包
 ## 配置参数
