@@ -37,8 +37,11 @@ class SongList:
         """
         :return: 裁剪图片
         """
+
         png_filename = self.png_filename
         big_image = Image.open(png_filename)
+        if big_image.mode == "RGBA":
+            big_image = big_image.convert('RGB')
         # print(big_image.size)
 
         self.height = big_image.size[1]
