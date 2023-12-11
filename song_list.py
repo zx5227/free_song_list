@@ -165,7 +165,8 @@ class SongList:
         df['y'] = height0 + (df['row_num2'] - 1) * df['y_step']
         df['x_int'] = df['x'].apply(lambda x: int(x))
         df['y_int'] = df['y'].apply(lambda y: int(y))
-        data = json.loads(df.to_json(orient="records", force_ascii=False))
+        # data = json.loads(df.to_json(orient="records", force_ascii=False))
+        data = df.to_dict(orient="records")
         return data
 
     # def each_row(self, num):
